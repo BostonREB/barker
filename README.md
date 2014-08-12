@@ -1,2 +1,2 @@
-Barker - An low-fi twitter clone
+Barker - A low-fi twitter clone
 ======
