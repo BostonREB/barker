@@ -11,16 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812161602) do
+ActiveRecord::Schema.define(version: 20140812220245) do
 
   create_table "barks", force: true do |t|
-    t.string   "body"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "content_id"
+    t.string   "content_type"
   end
 
+  add_index "barks", ["content_type", "content_id"], name: "index_barks_on_content_type_and_content_id"
   add_index "barks", ["user_id"], name: "index_barks_on_user_id"
+
+  create_table "text_barks", force: true do |t|
+    t.string "body"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false

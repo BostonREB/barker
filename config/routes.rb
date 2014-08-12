@@ -6,5 +6,6 @@ Barker::Application.routes.draw do
   resources :barks, only: [:create, :show]
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
+  resources :text_barks, only: [:create]
 
 end

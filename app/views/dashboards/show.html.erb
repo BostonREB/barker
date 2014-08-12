@@ -1,6 +1,6 @@
 <h2> Welcome <%= current_user.username %>!!</h2>
 
-<%= form_for @bark do |form| %>
+<%= form_for @text_bark do |form| %>
   <%= form.text_field :body, placeholder: "Bark content here" %>
   <%= form.submit "Bark!" %>
 <% end %>

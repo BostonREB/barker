@@ -1,7 +1,7 @@
 <%= div_for bark do %>
   <%= link_to bark.user.username, bark.user %>
   barked out
-  <%= bark.body %>
+  <%= render bark.content %>
   <%= link_to time_ago_in_words(bark.created_at), bark %>
   ago
 <% end %>
