@@ -4,5 +4,6 @@
   <%= render bark.content %>
   <%= link_to time_ago_in_words(bark.created_at), bark %>
   ago
+  <%= button_to "Delete Bark", bark_path(bark), method: :delete %>
 <% end %>
 
