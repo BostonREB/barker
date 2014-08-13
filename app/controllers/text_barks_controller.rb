@@ -11,6 +11,12 @@ class TextBarksController < ApplicationController
     end
   end
 
+  def destroy
+    text_bark = TextBark.find(params[:id])
+    text_bark.destroy
+    redirect_to dashboard
+  end
+
   private
 
   def build_content

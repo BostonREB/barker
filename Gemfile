@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'monban'
 gem 'monban-generators'
+gem 'paperclip'
 
 group :doc do
   gem 'sdoc', require: false
