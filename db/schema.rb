@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813152025) do
+ActiveRecord::Schema.define(version: 20140814155651) do
 
   create_table "barks", force: true do |t|
     t.integer  "user_id"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20140813152025) do
 
   add_index "barks", ["content_type", "content_id"], name: "index_barks_on_content_type_and_content_id"
   add_index "barks", ["user_id"], name: "index_barks_on_user_id"
+
+  create_table "following_relationships", force: true do |t|
+    t.integer  "followed_user_id"
+    t.integer  "follower_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "following_relationships", ["followed_user_id"], name: "index_following_relationships_on_followed_user_id"
+  add_index "following_relationships", ["follower_id"], name: "index_following_relationships_on_follower_id"
 
   create_table "photo_barks", force: true do |t|
     t.string   "image_file_name"
