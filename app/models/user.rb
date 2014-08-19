@@ -6,8 +6,4 @@ class User < ActiveRecord::Base
 
   has_many :barks
 
-  def following?(user)
-    followed_user_ids.include?(user.id)
-  end
-
 end

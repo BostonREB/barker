@@ -1,14 +1,15 @@
 <h2> Welcome <%= current_user.username %>!!</h2>
 
-<%= form_for @text_bark do |form| %>
+<%= form_for @dashboard.new_text_bark do |form| %>
   <%= form.text_field :body, placeholder: "Bark content here" %>
   <%= form.submit "Bark!" %>
 <% end %>
 
-<%= form_for @photo_bark do |form| %>
+<%= form_for @dashboard.new_photo_bark do |form| %>
   <%= form.file_field :image %>
   <%= form.submit "Bark!" %>
 <% end %>
 
 <h3>Here's What People Have Been Saying</h3>
-<%= render @barks %>
+
+<%= render @dashboard.timeline %>

@@ -3,10 +3,10 @@ Barker::Application.routes.draw do
   root 'homes#show', via: :get
 
   resource :dashboard, only: [:show]
-  resources :barks, only: [:create, :show, :destroy]
+  resources :barks, only: [:show, :destroy]
   resource :session, only: [:new, :create, :destroy]
 
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:new, :create, :show, :index] do
     post "follow" => 'following_relationships#create'
     delete "follow" => 'following_relationships#destroy'
   end
