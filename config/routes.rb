@@ -8,6 +8,7 @@ Barker::Application.routes.draw do
 
   resources :users, only: [:new, :create, :show] do
     post "follow" => 'following_relationships#create'
+    delete "follow" => 'following_relationships#destroy'
   end
 
   resources :text_barks, only: [:create]
